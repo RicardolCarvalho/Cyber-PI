@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="popup.css">
+  <title>Cyber-PI</title>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-left">
+        <img src="../icons/icon-48.png" alt="Cyber-PI" class="logo">
+        <div>
+          <h1>Cyber-PI</h1>
+          <span class="subtitle" id="current-domain">Carregando...</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Privacy Score -->
+    <section class="score-section">
+      <div class="score-ring" id="score-ring">
+        <svg viewBox="0 0 120 120">
+          <circle class="score-bg" cx="60" cy="60" r="52" />
+          <circle class="score-progress" id="score-circle" cx="60" cy="60" r="52" />
+        </svg>
+        <div class="score-value" id="score-value">--</div>
+      </div>
+      <div class="score-label" id="score-label">Analisando...</div>
+    </section>
+
+    <!-- Stats Cards -->
+    <section class="stats-grid">
+      <div class="stat-card" id="card-trackers">
+        <div class="stat-icon"></div>
+        <div class="stat-info">
+          <span class="stat-number" id="stat-blocked">0</span>
+          <span class="stat-label">Bloqueados</span>
+        </div>
+      </div>
+      <div class="stat-card" id="card-third-party">
+        <div class="stat-icon"></div>
+        <div class="stat-info">
+          <span class="stat-number" id="stat-third-party">0</span>
+          <span class="stat-label">3rd Party</span>
+        </div>
+      </div>
+      <div class="stat-card" id="card-cookies">
+        <div class="stat-icon"></div>
+        <div class="stat-info">
+          <span class="stat-number" id="stat-cookies">0</span>
+          <span class="stat-label">Cookies</span>
+        </div>
+      </div>
+      <div class="stat-card" id="card-threats">
+        <div class="stat-icon"></div>
+        <div class="stat-info">
+          <span class="stat-number" id="stat-threats">0</span>
+          <span class="stat-label">Ameaças</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="main-content" id="tab-details">
+      <!-- Third-party Domains -->
+      <div class="section-header">
+        <h3>Domínios de Terceiros</h3>
+        <span class="badge" id="badge-third-party">0</span>
+      </div>
+      <div class="domain-list" id="third-party-list">
+        <div class="empty-state">Nenhum domínio de terceiros detectado</div>
+      </div>
+
+      <!-- Canvas Fingerprint -->
+      <div class="section-header">
+        <h3>Canvas Fingerprint</h3>
+        <span class="badge" id="badge-canvas">—</span>
+      </div>
+      <div class="alert-box" id="canvas-alert" style="display:none">
+        <span class="alert-icon"></span>
+        <span>Canvas fingerprinting detectado nesta página!</span>
+      </div>
+
+      <!-- Cookie Sync -->
+      <div class="section-header">
+        <h3>Cookie Sync</h3>
+        <span class="badge" id="badge-sync">0</span>
+      </div>
+      <div class="domain-list" id="cookie-sync-list">
+        <div class="empty-state">Nenhum sincronismo de cookies detectado</div>
+      </div>
+
+      <!-- Storage -->
+      <div class="section-header">
+        <h3>Armazenamento Local (HTML5)</h3>
+      </div>
+      <div class="storage-info" id="storage-info">
+        <div class="storage-item">
+          <span>localStorage:</span>
+          <span class="storage-status" id="localstorage-status">Não utilizado</span>
+        </div>
+        <div class="storage-item">
+          <span>sessionStorage:</span>
+          <span class="storage-status" id="sessionstorage-status">Não utilizado</span>
+        </div>
+      </div>
+
+      <!-- Hijacking -->
+      <div class="section-header">
+        <h3>Ameaças de Hijacking</h3>
+        <span class="badge" id="badge-hijacking">0</span>
+      </div>
+      <div class="domain-list" id="hijacking-list">
+        <div class="empty-state">Nenhuma ameaça detectada</div>
+      </div>
+
+      <!-- Supercookies -->
+      <div class="section-header">
+        <h3>Supercookies</h3>
+        <span class="badge" id="badge-supercookies">0</span>
+      </div>
+      <div class="domain-list" id="supercookie-list">
+        <div class="empty-state">Nenhum supercookie detectado</div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <span>Cyber-PI v1.0 • Insper Cybersegurança</span>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
